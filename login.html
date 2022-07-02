@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Login</title>
+</head>
+
+<body>
+
+
+    <div class="bolha1"></div>
+    <div class="bolha2"></div>
+    <div class="quadrado1">
+        <p><br>
+            <div class="login">
+                <p id="login">Login</p>
+                <i class='bx bxs-user' id="iconesL" style='color:#ffffff'></i>
+                <input class="textboxL" type="text" id="usuario" placeholder="Usuário" value="123"><br><br>
+                <i class='bx bx-lock-alt' id="iconesL" style='color:#ffffff'></i>
+                <input class="textboxL" type="password" id="senha" placeholder="Senha" value="123"><br><br>
+                <i class='bx bx-log-in' id="iconesL" style='color:#ffffff'></i>
+                <input type="button" value="Entrar" id="button" onclick="verificar()">
+            </div>
+        </p>
+    </div>
+
+
+
+    <div class="glass">
+
+    </div>
+    <script src="js/login.js"></script>
+
+
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelector(".quadrado1"), {
+            max: 10,
+            speed: 200
+        });
+
+        function verificar() {
+
+            var login = "123"
+            var login_dig
+            var senha = 123
+            var senha_dig
+
+            var login_dig = window.document.getElementById("usuario")
+            var senha_dig = window.document.getElementById("senha")
+            var n1 = login_dig.value
+            var n2 = Number(senha_dig.value)
+
+
+            if (n1 != login || n2 != 123) {
+                alert("Usuário ou senha inválida")
+            } else {
+                window.location.replace("cadastro.html") //para abrir na mesma janela
+               // window.open("cadastro.html") // para abrir em uma nova aba
+                alert("SEJA BEM-VINDO! NOSSO PROGRAMA VAI COLETAR ALGUMAS INFORMACOES PARA ENCAMINHAR A SECRETARIA DE SAUDE FIQUE ATENTO E ATUALIZANDO O E-MAIL CADASTRADO PERIODICAMENTE PARA MAIS INFORMACOES.")
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

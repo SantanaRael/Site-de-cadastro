@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="bolha1"></div>
+    <div class="bolha2"></div>
+    <div class="glass">
+        <h3 id="titulo_cads">Cadastro</h3>
+        <form action="https://api.staticforms.xyz/submit" method="POST">
+            <div class="os4primeiros">
+                <input type="hidden" name="accessKey" value="c8fe239b-903e-49d6-af34-64db5018f9ae">
+                <input type="hidden" name="redirectTo" value="https://github.com/SantanaRael">
+                <i class='bx bx-receipt' style='color:#ffffff'></i>
+                <input class="textbox" type="text" id="cpf" placeholder="CPF" name="message" required><br><br>
+                <i class='bx bx-body' style='color:#ffffff'></i>
+                <input class="textbox" type="text" id="idade" placeholder="Idade" name="message" required><br><br>
+                <i class='bx bx-user' style='color:#ffffff'></i>
+                <input class="textbox" type="text" id="nome" placeholder="Nome" name="name" required><br><br>
+                <i class='bx bx-mail-send' style='color:#ffffff'></i>
+                <input class="textbox" type="text" id="email" placeholder="E-Mail" name="email" required><br><br>
+            </div>
+            <div class="os4ultimos">
+                <i class='bx bx-mobile-alt' style='color:#ffffff'></i>
+                <input class="textbox" type="text" id="celular" placeholder="Celular" name="phone" required><br><br>
+
+                <i class='bx bx-home' style='color:#ffffff'></i>
+                <input class="textbox" type="text" id="endereco" placeholder="Endereço" name="message" required><br><br>
+
+                <i class='bx bx-calendar-plus' style='color:#ffffff'></i>
+                <input class="textbox" type="date" id="dataent" placeholder="Data de Entrada" name="message" required><br><br>
+
+                <i class='bx bx-calendar' style='color:#ffffff'></i>
+                <input class="textbox" type="date" id="datadig" placeholder="Data do Diagnóstico" name="message" required><br><br>
+                <a href="cadastro.html"><input type="submit" value="Enviar" onclick="salvar()" id="button">
+            </div>
+    </div>
+    </form>
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script src="js/file_saver.js"></script>
+
+    <script>
+        alert("Seja BEM-VINDO! Nosso programa irá coletar algumas informações para encaminhar a secretaria de saúde, fique atento e atualizando o e-mail cadastrado periodicamente para mais informações.")
+
+        VanillaTilt.init(document.querySelector(".glass"), {
+            max: 10,
+            speed: 200
+        });
+
+        function salvar() {
+            let titulo = "DocumentList"
+            let cpf = document.getElementById("cpf").value;
+            let idade = document.getElementById("idade").value;
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            let celular = document.getElementById("celular").value;
+            let endereco = document.getElementById("endereco").value;
+            let dataent = document.getElementById("dataent").value;
+            let datadig = document.getElementById("datadig").value;
+
+
+
+            let blob = new Blob([cpf + "\n" + idade + "\n" + nome + "\n" + email + "\n" + celular + "\n" + endereco + "\n" + dataent + "\n" + datadig + "\n"], {
+                type: "text/plain;charset-utf-8"
+            });
+
+
+            saveAs(blob, titulo, +".txt");
+        }
+    </script>
+</body>
+
+</html>
